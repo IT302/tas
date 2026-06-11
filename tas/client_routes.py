@@ -41,6 +41,8 @@ def get_nonce_redis():
 
 
 @client_bp.route("/kb/v0/get_nonce", methods=["GET"])
+@client_bp.route("/alphav1/nonce", methods=["GET"])
+@client_bp.route("/v1/nonce", methods=["GET"])
 def get_nonce():
     logger.info(f"Received nonce request from {request.remote_addr}")
     auth_response = authenticate_request()
